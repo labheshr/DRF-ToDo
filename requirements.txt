@@ -1,8 +1,8 @@
 dj-database-url==0.3.0
 dj-static==0.0.6
-git+http://github.com/django-nonrel/mongodb-engine.git#egg=django_mongodb_engine
-hg+http://bitbucket.org/wkornewald/django-nonrel#egg=Django
-hg+http://bitbucket.org/wkornewald/djangotoolbox#egg=djangotoolbox
+git+https://github.com/django-nonrel/django@nonrel-1.5
+git+https://github.com/django-nonrel/djangotoolbox
+git+https://github.com/django-nonrel/mongodb-engine
 django-toolbelt==0.0.1
 djangorestframework==3.1.0
 gunicorn==19.0.0
