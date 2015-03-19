@@ -21,11 +21,24 @@ MANAGERS = ADMINS
 #    }
 #}
 
+#this config is for running on local computer
+#DATABASES = {
+#   'default' : {
+#      'ENGINE' : 'django_mongodb_engine',
+#      'NAME' : 'notes_db'
+#   }
+#}
+
+#this is the mongo config on the server
 DATABASES = {
-   'default' : {
-      'ENGINE' : 'django_mongodb_engine',
-      'NAME' : 'notes_db'
-   }
+    'default': {
+        'ENGINE': 'django_mongodb_engine',
+        'NAME': 'heroku_app35022879',              
+        'USER': 'heroku_app35022879',
+        'PASSWORD': 'am0p12f68rpeprn54g3lp6l039',
+        'HOST': 'ds041140.mongolab.com',                      
+        'PORT': 41140,                    
+    }
 }
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
