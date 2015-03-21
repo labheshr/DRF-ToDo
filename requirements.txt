@@ -16,3 +16,5 @@ requests==2.3.0
 six==1.9.0
 static3==0.5.1
 twilio==3.7.3
+django-haystack-2.3.1
+elasticsearch==1.4.0

@@ -144,6 +144,7 @@ INSTALLED_APPS = (
     'noteme',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
+    'haystack',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
@@ -180,3 +181,25 @@ LOGGING = {
         },
     }
 }
+
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+from urlparse import urlparse
+# Get your connection url from Searchly dashboard
+es = urlparse('https://site:10d4916f447bbb8533eee0f7fb4447ed@fili-us-east-1.searchly.com')
+ 
+port = es.port or 80
+ 
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
+        'URL': es.scheme + '://' + es.hostname + ':' + str(port),
+        'INDEX_NAME': 'todos',
+    },
+}
+ 
+if es.username:
+    HAYSTACK_CONNECTIONS['default']['KWARGS'] = {"http_auth": es.username + ':' + es.password}
+ 
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
