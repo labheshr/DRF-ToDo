@@ -37,7 +37,6 @@ class ToDoList(generics.ListCreateAPIView):
             title = self.request.query_params.get('title', None)
             if body:
                 queryset = SearchQuerySet().filter(body=body)
-                assert False, queryset
             elif title:
                 queryset = SearchQuerySet().filter(title=title)
             else:
