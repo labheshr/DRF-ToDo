@@ -31,14 +31,14 @@ class ToDoList(generics.ListCreateAPIView):
     def get_queryset(self, *args, **kwargs):
             request = self.request
             queryset = EmptySearchQuerySet()
-            if request.GET.get('q') is not None:
+            #if request.GET.get('q') is not None:
                 #query = request.GET.get('q')
-                body = self.request.query_params.get('body', None)
-                if body:
-                    queryset = SearchQuerySet().filter(body=body)
-                title = self.request.query_params.get('title', None)
-                if title:
-                    queryset = SearchQuerySet().filter(title=title)
+            body = self.request.query_params.get('body', None)
+            if body:
+                queryset = SearchQuerySet().filter(body=body)
+            title = self.request.query_params.get('title', None)
+            if title:
+                queryset = SearchQuerySet().filter(title=title)
             else:
                 queryset = ToDo.objects.all()
 
