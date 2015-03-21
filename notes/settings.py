@@ -187,7 +187,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 from urlparse import urlparse
 # Get your connection url from Searchly dashboard
-es = urlparse('https://site:10d4916f447bbb8533eee0f7fb4447ed@fili-us-east-1.searchly.com')
+es = es = urlparse(os.environ.get('SEARCHBOX_URL') or 'http://127.0.0.1:9200/')
  
 port = es.port or 80
  
@@ -195,7 +195,7 @@ HAYSTACK_CONNECTIONS = {
     'default': {
         'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
         'URL': es.scheme + '://' + es.hostname + ':' + str(port),
-        'INDEX_NAME': 'todos',
+        'INDEX_NAME': 'documents',
     },
 }
  
