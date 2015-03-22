@@ -10,19 +10,7 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-#        'NAME': '',                      # Or path to database file if using sqlite3.
-#        # The following settings are not used with sqlite3:
-#        'USER': '',
-#        'PASSWORD': '',
-#        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-#        'PORT': '',                      # Set to empty string for default.
-#    }
-#}
-
-#this config is for running on local computer
+#this config is for running on local server
 #DATABASES = {
 #   'default' : {
 #      'ENGINE' : 'django_mongodb_engine',
@@ -30,15 +18,14 @@ MANAGERS = ADMINS
 #   }
 #}
 
-#this is the mongo config on the server
 DATABASES = {
     'default': {
         'ENGINE': 'django_mongodb_engine',
-        'NAME': 'heroku_app35022879',              
-        'USER': 'heroku_app35022879',
-        'PASSWORD': 'am0p12f68rpeprn54g3lp6l039',
-        'HOST': 'ds041140.mongolab.com',                      
-        'PORT': 41140,                    
+        'NAME': os.environ['MONGO_NAME'],              
+        'USER': os.environ['MONGO_USER'],
+        'PASSWORD': os.environ['MONGO_PASS'],
+        'HOST': os.environ['MONGO_HOST'],                    
+        'PORT': os.environ['MONGO_PORT'],                    
     }
 }
 
@@ -104,7 +91,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '@m(z=73grqo07(hi@b3p-_8#-o$)b=)#f!jw$hulebh!bqs0vc'
+SECRET_KEY = os.environ['DJANGO_KEY']
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
