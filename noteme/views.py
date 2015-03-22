@@ -14,30 +14,20 @@ class ToDoList(generics.ListCreateAPIView):
     '''
     serializer_class = ToDoSerializer
     
-    #def get_queryset(self, *args, **kwargs):
-    #        request = self.request
-    #        queryset = EmptySearchQuerySet()
-    #        body = self.request.query_params.get('body', None)
-    #        title = self.request.query_params.get('title', None)
-    #        if body:
-    #            queryset = SearchQuerySet().filter(body=body)
-    #        elif title:
-    #            queryset = SearchQuerySet().filter(title=title)
-    #        else:
-    #            queryset = ToDo.objects.all()
-    #
-    #        return queryset
-
     def get_queryset(self, *args, **kwargs):
-            request = self.request
-            queryset = EmptySearchQuerySet()
-            query = request.GET.get('q')
-            if query:
-                queryset = SearchQuerySet().filter(content=query)
-            else:
-                queryset = ToDo.objects.all()
+        #TODO: need to make this robust enough so it doesnt return all of the objects if nothing matches for body/title
+        request = self.request
+        queryset = EmptySearchQuerySet()
+        body = self.request.query_params.get('body', None)
+        title = self.request.query_params.get('title', None)
+        if body:
+            queryset = SearchQuerySet().filter(body=body)
+        elif title:
+            queryset = SearchQuerySet().filter(title=title)
+        else:
+            queryset = ToDo.objects.all()
 
-            return queryset
+        return queryset
 
 class ToDoDetail(generics.RetrieveUpdateDestroyAPIView):
     '''
