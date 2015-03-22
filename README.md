@@ -11,7 +11,7 @@ This software is an attempt to put all of the below to work together in a simple
 If you'd like to see a working demo on Heroku, please contact me at labheshr@gmail.com
 
 Endpoint description:
-(If possible please use google Postman rest client for a "nicer" experience.)
+(If possible please use Google Postman rest client for a "nicer" experience.)
 
 1. GET: mysite/todo/ to view all Todo notes by a single user
 2. GET: mysite/todo/<<titlename>> to view the Todo note by a specific title
