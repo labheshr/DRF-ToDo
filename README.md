@@ -8,7 +8,7 @@ This software is an attempt to put all of the below to work together in a simple
 3. Haystack/Elastic search (powered by heroku searchbox/searchly)
 4. Another rest service (Twilio) to send SMS to oneself
 
-If you'd like to see a working demo on Heroku, please contact me at labheshr[at]gmail.com
+If you'd like to see a working demo on Heroku, please contact me at labheshr[at]gmail[dot]com
 
 Endpoint description:
 (If possible please use Google Postman rest client for a "nicer" experience.)
