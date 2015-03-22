@@ -1,5 +1,5 @@
 # DRF-ToDo
-a single user todo app using Django Rest Framework, MongoDb, and Haystack(elastic search)
+A single user todo/note making app using Django Rest Framework, MongoDb, and Haystack(elastic search)
 
 This software is an attempt to put all of the below to work together in a simple application:
 1. Django Rest Framework
@@ -20,6 +20,7 @@ Endpoint description:
 6. PUT: mysite/todo/<<titlename>> with key value pair in the body as: title=xxx, body=yyy, done=True or False
 
 Bugs/Todos/Improvements:
+
 1. provide support for deleting/querying multiple todos with same titles
 2. allow an interface for multiple users
 3. better search handling via haystack framework
