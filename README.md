@@ -14,11 +14,11 @@ Endpoint description:
 (If possible please use Google Postman rest client for a "nicer" experience.)
 
 1. GET: mysite/todo/ to view all Todo notes by a single user
-2. GET: mysite/todo/<<titlename>> to view the Todo note by a specific title
-3. GET: mysite/todo?title=<<title of todo note>> OR mysite/todo?body=<<body of todo note>> (search via haystack)
+2. GET: mysite/todo/{titlename} to view the Todo note by a specific title
+3. GET: mysite/todo?title={title of todo note} OR mysite/todo?body={body of todo note} (search via haystack)
 4. POST: mysite/todo/ body of request must have "title" and "body" fields populated
-5. DELETE: mysite/todo/<<titlename>>
-6. PUT: mysite/todo/<<titlename>> with key value pair in the body as: title=xxx, body=yyy, done=True or False
+5. DELETE: mysite/todo/{titlename}
+6. PUT: mysite/todo/{titlename} with key value pair in the body as: title=xxx, body=yyy, done=True or False
 
 Bugs/Todos/Improvements:
 
