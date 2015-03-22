@@ -9,6 +9,12 @@ import os
 
 from haystack.query import EmptySearchQuerySet,SearchQuerySet
 
+
+#class ToDoViewSet(viewsets.ModelViewSet):
+#    queryset = ToDo.objects.all()
+#    serializer_class = ToDoSerializer
+#    lookup_field = 'title'
+
 class ToDoList(generics.ListCreateAPIView):
     '''
     http http://127.0.0.1:8000/todo/
