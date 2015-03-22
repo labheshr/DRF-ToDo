@@ -2,6 +2,7 @@
 A single user todo/note making app using Django Rest Framework, MongoDb, and Haystack(elastic search)
 
 This software is an attempt to put all of the below to work together in a simple application:
+
 1. Django Rest Framework
 2. Mongo Db (via django nonrel)
 3. Haystack/Elastic search (powered by heroku searchbox/searchly)
