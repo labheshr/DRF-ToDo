@@ -26,7 +26,7 @@ Bugs/Todos/Improvements:
 2. allow an interface for multiple users
 3. better search handling via haystack framework
 
-Please feel free to use this project or get back to me comments/questions
+Please feel free to use this project or get back to me with comments/questions
 
 Regards,
 
