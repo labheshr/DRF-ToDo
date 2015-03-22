@@ -12,12 +12,12 @@ If you'd like to see a working demo on Heroku, please contact me at labheshr@gma
 Endpoint description:
 (If possible please use google Postman rest client for a "nicer" experience.)
 
-GET: mysite/todo/ to view all Todo notes by a single user
-GET: mysite/todo/<<titlename>> to view the Todo note by a specific title
-GET: mysite/todo?title=<<title of todo note>> OR mysite/todo?body=<<body of todo note>> (search via haystack)
-POST: mysite/todo/ body of request must have "title" and "body" fields populated
-DELETE: mysite/todo/<<titlename>>
-PUT: mysite/todo/<<titlename>> with key value pair in the body as: title=xxx, body=yyy, done=True or False
+1) GET: mysite/todo/ to view all Todo notes by a single user
+2) GET: mysite/todo/<<titlename>> to view the Todo note by a specific title
+3) GET: mysite/todo?title=<<title of todo note>> OR mysite/todo?body=<<body of todo note>> (search via haystack)
+4) POST: mysite/todo/ body of request must have "title" and "body" fields populated
+5) DELETE: mysite/todo/<<titlename>>
+6) PUT: mysite/todo/<<titlename>> with key value pair in the body as: title=xxx, body=yyy, done=True or False
 
 Bugs/Todos/Improvements:
 1) provide support for deleting/querying multiple todos with same titles
