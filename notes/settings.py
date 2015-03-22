@@ -153,6 +153,11 @@ INSTALLED_APPS = (
 
 APPEND_SLASH = False
 
+# add pagination
+REST_FRAMEWORK ={
+    'PAGE_SIZE': 3,
+}
+
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 
 # A sample logging configuration. The only tangible logging
@@ -188,7 +193,7 @@ LOGGING = {
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 from urlparse import urlparse
-# Get your connection url from Searchly dashboard
+# This is installed via heroku addons:add searchbox (provided by searchly)
 es = es = urlparse(os.environ.get('SEARCHBOX_URL') or 'http://127.0.0.1:9200/')
  
 port = es.port or 80

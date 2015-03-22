@@ -13,15 +13,3 @@ urlpatterns = [
 urlpatterns = format_suffix_patterns(urlpatterns)
 
 
-#from django.conf.urls import url, include
-#from noteme import views
-#from rest_framework.routers import DefaultRouter
-#
-## Create a router and register our viewsets with it.
-#router = DefaultRouter()
-#router.register(r'todo', views.ToDoViewSet)
-#router.register(r'search', views.ToDoViewSet, base_name='search')
-#urlpatterns = [
-#    url(r'^', include(router.urls)),
-#]
-

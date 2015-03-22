@@ -9,36 +9,17 @@ import os
 
 from haystack.query import EmptySearchQuerySet,SearchQuerySet
 
-
-#class ToDoViewSet(viewsets.ModelViewSet):
-#    queryset = ToDo.objects.all()
-#    serializer_class = ToDoSerializer
-#    lookup_field = 'title'
-
 class ToDoList(generics.ListCreateAPIView):
     '''
     http http://127.0.0.1:8000/todo/
     http --json POST http://127.0.0.1:8000/todo/ title="clean" body="clean home"
     '''
-    queryset = ToDo.objects.all()
+    #queryset = ToDo.objects.all() #dont think we need this anymore
     serializer_class = ToDoSerializer
-
-    #def get_queryset(self):
-    #    '''
-    #    restrict using body of the title
-    #    http http://127.0.0.1:8000/todo?body=clean%20home
-    #    '''
-    #    queryset = ToDo.objects.all()
-    #    body = self.request.query_params.get('body', None)
-    #    if body is not None:
-    #        queryset = queryset.filter(body=body)
-    #    return queryset
-
+    
     def get_queryset(self, *args, **kwargs):
             request = self.request
             queryset = EmptySearchQuerySet()
-            #if request.GET.get('q') is not None:
-                #query = request.GET.get('q')
             body = self.request.query_params.get('body', None)
             title = self.request.query_params.get('title', None)
             if body:
