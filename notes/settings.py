@@ -155,7 +155,7 @@ APPEND_SLASH = False
 
 # add pagination
 REST_FRAMEWORK ={
-    'PAGE_SIZE': 3,
+    'PAGE_SIZE': 5,
 }
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'

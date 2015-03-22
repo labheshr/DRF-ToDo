@@ -1,8 +1,6 @@
 from noteme.models import ToDo
 from noteme.serializers import ToDoSerializer
-from rest_framework import mixins
 from rest_framework import generics
-from rest_framework import viewsets
 import logging
 logger = logging.getLogger(__name__)
 import os
@@ -14,18 +12,28 @@ class ToDoList(generics.ListCreateAPIView):
     http http://127.0.0.1:8000/todo/
     http --json POST http://127.0.0.1:8000/todo/ title="clean" body="clean home"
     '''
-    #queryset = ToDo.objects.all() #dont think we need this anymore
     serializer_class = ToDoSerializer
     
+    #def get_queryset(self, *args, **kwargs):
+    #        request = self.request
+    #        queryset = EmptySearchQuerySet()
+    #        body = self.request.query_params.get('body', None)
+    #        title = self.request.query_params.get('title', None)
+    #        if body:
+    #            queryset = SearchQuerySet().filter(body=body)
+    #        elif title:
+    #            queryset = SearchQuerySet().filter(title=title)
+    #        else:
+    #            queryset = ToDo.objects.all()
+    #
+    #        return queryset
+
     def get_queryset(self, *args, **kwargs):
             request = self.request
             queryset = EmptySearchQuerySet()
-            body = self.request.query_params.get('body', None)
-            title = self.request.query_params.get('title', None)
-            if body:
-                queryset = SearchQuerySet().filter(body=body)
-            elif title:
-                queryset = SearchQuerySet().filter(title=title)
+            query = request.GET.get('q')
+            if query:
+                queryset = SearchQuerySet().filter(content=query)
             else:
                 queryset = ToDo.objects.all()
 
