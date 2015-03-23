@@ -4,7 +4,7 @@ A single user todo/note making rest service using Django Rest Framework, MongoDb
 This software is an attempt to put all of the below to work together in a simple application:
 
 1. Django Rest Framework
-2. Mongo Db (via django nonrel)
+2. MongoDB (via django nonrel)
 3. Haystack/Elastic search (powered by heroku searchbox/searchly)
 4. Another rest service (Twilio) to send SMS to oneself
 
